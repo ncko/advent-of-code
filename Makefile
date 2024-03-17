@@ -17,6 +17,11 @@ day2a : day2a.c advent.o
 	cc -c day2a.c
 	cc day2a.o advent.o $(CFLAGS) -o ./dist/day2a 
 
+day2b : day2b.c advent.o
+	mkdir -p dist
+	cc -c day2b.c
+	cc day2b.o advent.o $(CFLAGS) -o ./dist/day2b 
+
 advent.o : advent.c advent.h
 	cc -c advent.c $(CFLAGS)
 clean :
