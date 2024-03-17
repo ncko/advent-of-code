@@ -1,4 +1,4 @@
-CFLAGS = -Wall -g
+CFLAGS = -Wall -Wextra -g
 
 all : day1a day1b day2a
 
@@ -18,6 +18,6 @@ day2a : day2a.c advent.o
 	cc day2a.o advent.o $(CFLAGS) -o ./dist/day2a 
 
 advent.o : advent.c advent.h
-	cc -c advent.c
+	cc -c advent.c $(CFLAGS)
 clean :
 	rm -fr ./dist *.o

@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     char line[INT8_MAX];
     char *result;
     char *token;
-    int i, side1, side2, side3, smallest;
+    int i;
     int dimensions[] = { 0, 0, 0 };
     int sides[] = { 0, 0, 0 };
     int total = 0;
@@ -28,14 +28,10 @@ int main(int argc, char *argv[])
             dimensions[i++] = atoi(token);
             token = strtok(NULL, "x");
         }
-        side1 = 2 * dimensions[0] * dimensions[1];
-        side2 = 2 * dimensions[1] * dimensions[2];
-        side3 = 2 * dimensions[0] * dimensions[2];
-        sides[0] = side1;
-        sides[1] = side2;
-        sides[2] = side3;
-        smallest = min(sides, 3);
-        total += side1 + side2 + side3 + (smallest / 2);
+        sides[0] = dimensions[0] * dimensions[1];
+        sides[1] = dimensions[1] * dimensions[2];
+        sides[2] = dimensions[0] * dimensions[2];
+        total += 2*sides[0] + 2*sides[1] + 2*sides[2] + min(sides, 3);
     }
 
     printf("%d\n", total);
