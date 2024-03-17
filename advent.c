@@ -8,8 +8,7 @@ void die(const char *msg)
     if (errno) {
         perror(msg);
     } else {
-        //fprintf(stderr, "%s\n", msg);
-        printf("%s\n", msg);
+        fprintf(stderr, "%s\n", msg);
     }
     
     exit(1);
